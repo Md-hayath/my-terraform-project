@@ -1,0 +1,13 @@
+Jenkins uninstalling
+
+
+
+sudo systemctl stop jenkins 2>/dev/null
+sudo apt remove --purge -y jenkins
+sudo apt autoremove -y
+sudo rm -rf /var/lib/jenkins /etc/jenkins /var/log/jenkins
+sudo rm -f /etc/systemd/system/jenkins.service /lib/systemd/system/jenkins.service
+sudo rm -f /etc/apt/sources.list.d/jenkins.list
+sudo rm -f /usr/share/keyrings/jenkins-keyring.gpg /usr/share/keyrings/jenkins-keyring.asc
+sudo systemctl daemon-reload
+sudo apt update
